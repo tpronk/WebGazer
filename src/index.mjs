@@ -169,6 +169,9 @@ function checkEyesInValidationBox() {
   }
   else
     faceFeedbackBox.style.border = 'solid black';
+
+  // TP 2020-09-30
+  return xPositions !== undefined && xPositions && yPositions !== undefined && yPositions;
 }
 
 /**
@@ -599,6 +602,10 @@ function setUserMediaVariable(){
 
 //PUBLIC FUNCTIONS - CONTROL
 
+/** TP 2020-09-30; expose checkEyesInValidationBox */
+webgazer.checkEyesInValidationBox = function() {
+  return checkEyesInValidationBox();
+}
 /**
  * Starts all state related to webgazer -> dataLoop, video collection, click listener
  * If starting fails, call `onFail` param function.
